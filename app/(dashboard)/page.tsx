@@ -22,7 +22,9 @@ async function page() {
 
 
   return (
-    <div>page</div>
+    <div className='h-full bg-background'>
+      <div className="border-b"></div>
+    </div>
   )
 }
 
