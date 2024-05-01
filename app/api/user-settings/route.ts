@@ -15,7 +15,7 @@ export async function GET(request: Request) {
       userId: user.id,
     },
   });
-
+hhhhhh hh
   if (!userSettings) {
     userSettings = await prisma.userSettings.create({
       data: {
