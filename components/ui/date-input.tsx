@@ -73,22 +73,22 @@ const DateInput: React.FC<DateInputProps> = ({ value, onChange }) => {
 
   const handleBlur =
     (field: keyof DateParts) =>
-    (e: React.FocusEvent<HTMLInputElement>): void => {
-      if (!e.target.value) {
-        setDate(initialDate.current);
-        return;
-      }
+      (e: React.FocusEvent<HTMLInputElement>): void => {
+        if (!e.target.value) {
+          setDate(initialDate.current);
+          return;
+        }
 
-      const newValue = Number(e.target.value);
-      const isValid = validateDate(field, newValue);
+        const newValue = Number(e.target.value);
+        const isValid = validateDate(field, newValue);
 
-      if (!isValid) {
-        setDate(initialDate.current);
-      } else {
-        // If the new value is valid, update the initial value
-        initialDate.current = { ...date, [field]: newValue };
-      }
-    };
+        if (!isValid) {
+          setDate(initialDate.current);
+        } else {
+          // If the new value is valid, update the initial value
+          initialDate.current = { ...date, [field]: newValue };
+        }
+      };
 
   const handleKeyDown =
     (field: keyof DateParts) => (e: React.KeyboardEvent<HTMLInputElement>) => {
