@@ -1,10 +1,3 @@
 export type TransactionType = "income" | "expense";
-
-export interface Transaction {
-  id: string;
-  title: string;
-  amount: number;
-  type: TransactionType;
-  category: string;
-  createdAt: string;
-}
+export type Timeframe = "month" | "year";
+export type Period = { year: number; month: number };
